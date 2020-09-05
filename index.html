@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      
+        <title>Admin Dashboard</title>
+      
+        <link rel="stylesheet" href="style.css">
+        <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+        <link rel="stylesheet" href="https://use.typekit.net/gtu7ugu.css">
+        <script src="https://kit.fontawesome.com/e8c8e8e543.js" crossorigin="anonymous"></script>
+        <script src="jquery.js"></script>
+      </head>
+      
+<body>
+    <div id='login-screen'>
+        <div style='margin-top:100px;'>
+            <h2>Admin Dashboard</h2>
+            <p>Service Management</p>
+            <button onclick='signIn()'>Log In</button>
+        </div>
+    </div>
+    <main id='main' style='display:none; overflow:scroll; padding-bottom:200px;' >
+
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'London')">Courses</button>
+            <button class="tablinks" onclick="openCity(event, 'tutors')">Accounts</button>
+            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Chat</button>
+          </div>
+          
+          <!-- Tab content -->
+          <div id="London" class="tabcontent">
+            <h2>Courses</h2>
+            <p>Note - don't change course codes unless mandatory as it affects site wide.</p>
+            <div id='courselist' style='cursor:pointer;'>
+                <li onclick='alert("ah")'>Math 6 (MT6)</li>
+            </div><br>
+            <button onclick='addcourse()'>Add Course</button>
+          </div>
+          
+          <div id="tutors" class="tabcontent">
+            <h2>Accounts</h2>
+            <h3>Pending</h3>
+            <ul id='pendingUsers'>
+            </ul>
+            <h3>Verified</h3>
+            <ul id='verifiedtutors'>
+            </ul>
+          </div>
+          
+          <div id="Tokyo" class="chat tabcontent">
+            <div class='chat'>
+              <div id='userlist'></div>
+              <div class='page' id='chat'>
+                <div class='card'>
+                    <h2>💬 Chatlog</h2>
+    
+                    <div id='message-con'>
+                        <div class='other-message'>
+                            <img src='assets/user.png'></img>
+                            <p>Hello User text what's up?</p>
+                            <time>5:36 pm</time>
+                        </div>
+                        <div class='user-message'>
+                            <time>5:36 pm</time>
+                            <p>Oh, hey i have like a really big and long question for you and I</p>
+                            <img src='assets/user.png'></img>
+                        </div>
+                    </div>
+    
+                    <div id='message-input' contenteditable="true" data-ph="Type something..."></div>
+                </div>
+            </div>
+            
+            </div>
+          </div>
+    </main>
+</body>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+<script src="auth.js"></script>
+<script src="script.js"></script>
+<script src="chat.js"></script>
+
+
+</html>
